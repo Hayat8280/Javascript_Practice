@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <style>
+        *{
+            font-family: sans-serif;
+        }
+
+        .container {
+            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgb(255, 255, 255));
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            text-align: center;
+            align-items: center;
+            margin: 0px auto;
+            border-radius: 10px;
+            width: 400px;
+            min-height: 230px;
+            box-shadow: 0px 1px 10px 1px rgb(0, 0, 0, 0.4);
+            padding-bottom: 15px;
+        }
+
+        .item {
+            width: 350px;
+            height: 25px;
+            text-align: center;
+            border: 0;
+            border-radius: 10px;
+        }
+
+        .date {
+            margin-top: 15px;
+            width: 350px;
+            height: 25px;
+            text-align: center;
+            border: none;
+            border-radius: 10px;
+        }
+
+        .container button {
+            margin-top: 15px;
+            width: 350px;
+            height: 30px;
+            color: white;
+            background-color: blue;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        .task {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: 1px solid gray;
+            width: 350px;
+            height: 50px;
+            margin-top: 15px;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0px 1px 10px 1px rgb(0, 0, 0, 0.3);
+        }
+
+        .task button {
+            background-color: red;
+            color: white;
+            width: 60px;
+            margin: auto 0px;
+            margin-right: 15px;
+            cursor: pointer;
+        }
+
+        .task p {
+            margin-left: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Simple To-Do List</h1>
+        <input class="item" type="text" placeholder="Enter task name">
+        <input class="date" type="date">
+        <button onclick="addItem()">Add Task</button>
+        <div class="list"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

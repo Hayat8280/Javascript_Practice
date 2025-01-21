@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <style>
+        * {
+            font-family: sans-serif;
+            text-align: center;
+        }
+
+        .container {  
+            margin: auto;
+            border: 1px solid;       
+            width: 450px;
+            height: 150px;
+            background-color: rgb(209, 209, 209);
+        }
+
+        .container input[type="text"] {
+            margin-right: 5px;
+            height: 25px;
+        }
+
+        .container input[type="date"] {
+            margin-right: 5px;
+            height: 27px;
+            font-weight: 600;
+        }
+
+        .container button {
+            height: 30px;
+            width: 80px;
+            cursor: pointer;
+            background-color: green;
+            color: white;
+            border-color: gray;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Todo List</h1>
+        <input class="item" type="text" placeholder="Todo name">
+        <input class="date" type="date">
+        <button onclick="addItem()">Add</button>
+    </div>
+    <div class="list"></div>
+</body>
+
+<script>
+    let arr = [];
+    let indx = 0;
+
+    function addItem() {
+        const item = document.querySelector('.item').value;
+        const date = document.querySelector('.date').value;
+
+        if(item === '' || date === '') {
+            return;
+        }
+
+        for(let i = 0; i < arr.length; i++) {
+            if(arr[i].dt === date) {
+                alert('Todo list has already been added for this date.\nPlease choose a different date.');
+                return;
+            }
+        }
+        
+        let itemClass = 'item' + indx;
+        let list = {};
+        list.todo = item;
+        list.dt = date;
+        list.uid = itemClass;
+        arr.push(list);
+        
+        let itemList =
+        `<p class='${itemClass}'
+                style="
+                display: flex;
+                justify-content: space-evenly;
+                align-items: center;
+                margin: auto;
+                border: 1px solid black;
+                border-top: none;
+                max-width: 450px;
+                height: 70px;
+                font-weight: bold;">
+                <span>${arr[indx].todo}</span><span>${arr[indx].dt}</span>
+                <button onclick="deleteItem('${itemClass}')"
+                    style="
+                    margin-right: 25px;
+                    width: 80px;
+                    height: 30px;
+                    cursor: pointer;
+                    background-color: red;
+                    color: white;">
+                    Delete
+                </button>
+            </p>`;
+        
+        document.querySelector('.list').innerHTML += itemList;
+        indx++;
+        document.querySelector('.item').value = '';
+        document.querySelector('.date').value = '';
+    }
+
+    function deleteItem(itemClass) {
+        document.getElementsByClassName(itemClass)[0].remove();
+        // const indx = Number(uid.charAt(uid.length - 1));
+        // console.log(indx);
+        // console.log(uid);
+        // console.log(arr[indx]);
+        // arr.splice(indx, 1);
+        for(let i = 0; i < arr.length; i++) {
+            if(arr[i].uid === itemClass) {
+                arr.splice(i, 1);
+                --indx;
+                break;
+            }
+        }
+    }
+
+</script>
+</html>

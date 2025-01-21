@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="login-page">
+        <div class="login-form">
+            <h1>Login</h1>
+            <input id="loginUsername" type="text" placeholder="Username">
+            <input id="loginPassword" type="text" placeholder="Password">
+            <button id="btnLogin" onclick="login()">Log in</button>
+            <p>Don't have an account? <a id="clickRegister" href="#">Register</a></p>
+        </div>
+    </div>
+    
+    <div class="register-page hidden">
+        <div class="register-form">
+            <h1>Register</h1>
+            <input id="regUsername" type="text" placeholder="Username">
+            <input id="regPassword" type="text" placeholder="Password">
+            <button id="btnRegister" onclick="register()">Register</button>
+        </div>
+    </div>
+
+    <div class="user-page hidden">
+        <div class="user-section">
+            <div class="nav">
+                <h1>Bogusgram</h1>
+                <button class="btnLogout" onclick="logout()">Logout</button>
+            </div>
+            <div class="posts"></div>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+</html>

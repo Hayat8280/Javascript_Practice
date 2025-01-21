@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="input-box"></div>
+        <div class="btn-container">
+            <div class="col1">
+                <button class="btn" onclick="insert(7, 'operand')">7</button>
+                <button class="btn" onclick="insert(8, 'operand')">8</button>
+                <button class="btn" onclick="insert(9, 'operand')">9</button>
+                <button class="btn optr" onclick="insert('/')">/</button>
+            </div>
+            <div class="col2">
+                <button class="btn" onclick="insert(4, 'operand')">4</button>
+                <button class="btn" onclick="insert(5, 'operand')">5</button>
+                <button class="btn" onclick="insert(6, 'operand')">6</button>
+                <button class="btn optr" onclick="insert('*')">*</button>
+            </div>
+            <div class="col3">
+                <button class="btn" onclick="insert(1, 'operand')">1</button>
+                <button class="btn" onclick="insert(2, 'operand')">2</button>
+                <button class="btn" onclick="insert(3, 'operand')">3</button>
+                <button class="btn optr" onclick="insert('-')">-</button>
+            </div>
+            <div class="col4">
+                <button class="btn" onclick="insert(0, 'operand')">0</button>
+                <button class="btn" onclick="insert('.', 'operand')">.</button>
+                <button class="btn" onclick="calculate()">=</button>
+                <button class="btn optr" onclick="insert('+')">+</button>
+            </div>
+            <div class="col5">
+                <button class="btn" onclick="clearScreen()">C</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

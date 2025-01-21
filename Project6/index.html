@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Simple Timer & Stopwatch</h1>
+        <div class="display-time">00:00:00</div>
+        <div class="control-box">
+            <select id="timeUnit">
+                <option value="sec">Seconds</option>
+                <option value="min">Minutes</option>
+                <option value="hr">Hours</option>
+            </select>
+            <input id="inputTime" type="number">
+            <button class="btnSetTimer" onclick="SetTime()">Set Timer</button>
+            <button class="btnStart" onclick="StartTimer()">Start</button>
+            <button class="btnPause" onclick="PauseTimer()">Pause</button>
+            <button class="btnReset" onclick="ResetTimer()">Reset</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
